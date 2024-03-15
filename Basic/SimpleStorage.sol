@@ -39,7 +39,19 @@ contract SimpleStorage {
     function addPerson(string memory name, uint personNumber) public {
         listOfPeople.push(Person(personNumber, name));
     }
-
     Person public person = Person(50, "John");
     Person public person1 = Person({personNumber: 100, name: "Tom"});
+
+    // Variables
+    // Local variables - The variable has scope only within the specified function
+    function getValues() public pure returns (uint) {
+        uint staticValue = 0;
+        return staticValue;
+    }
+    //State variables - The variable has scope anywhere in the smart contract
+    uint public globalValue = 0;
+    uint256 public globalValue256 = 0;
+    uint8 public globalValue8 = 0;
+    int256 public globalInt256 = 0;
+
 }
