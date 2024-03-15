@@ -74,7 +74,5 @@ contract SimpleStorage {
         listOfUser.push(User(userNumber, userName));
         nameForNumber[userName] = userNumber;
     }
-
-
-    
+ 
 }
