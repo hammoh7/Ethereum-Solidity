@@ -2,6 +2,7 @@
 pragma solidity ^0.8.18;
 
 contract SimpleStorage {
+
     // Basic types = boolean, uint, int, address, bytes, strings
 
     uint yourNumber = 12;
@@ -10,6 +11,7 @@ contract SimpleStorage {
     bool myNumber3 = true;
     string myString = "Hello Everyone";
     bytes32 myBytes32 = "Hey, whatsup!";
+
 
     // Functions
 
@@ -27,6 +29,7 @@ contract SimpleStorage {
         return 10;
     }
 
+
     // Arrays and Structs
 
     struct Person {
@@ -42,7 +45,9 @@ contract SimpleStorage {
     Person public person = Person(50, "John");
     Person public person1 = Person({personNumber: 100, name: "Tom"});
 
+
     // Variables
+
     // Local variables - The variable has scope only within the specified function
     function getValues() public pure returns (uint) {
         uint staticValue = 0;
@@ -54,4 +59,22 @@ contract SimpleStorage {
     uint8 public globalValue8 = 0;
     int256 public globalInt256 = 0;
 
+
+    // Mapping
+
+    struct User {
+        uint256 userNumber;
+        string userName;
+    }
+    User[] public listOfUser;
+    // Mapping: string -> user's number
+    mapping(string => uint256) public nameForNumber;
+
+    function addUser(string memory userName, uint256 userNumber) public {
+        listOfUser.push(User(userNumber, userName));
+        nameForNumber[userName] = userNumber;
+    }
+
+
+    
 }
