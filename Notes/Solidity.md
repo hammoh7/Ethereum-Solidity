@@ -16,14 +16,14 @@ Characteristics: -
    for commmon functionalities like token standards (e.g. ERC-20, ERC-721)
 
 Hello World program:-
-
+```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
 contract HelloWorld {
     string public greet = "Hello World!";
 }
-
+```
 Terms uesd in above program:-
 1. SPDX License Identifier - SPDX stands for Software Package Data Exchange, and it's a standard format used to declare 
    licenses associated with software projects. In this case, the license is declared as MIT, indicating that the code is licensed under the terms of the MIT License, which is a permissive open-source license.
