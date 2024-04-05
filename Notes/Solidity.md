@@ -589,7 +589,7 @@ Example- contract B is A {}
    Example-
    ```
    contract B is A {
-      function foo() public pure virtual override returns (string memory) {
+      function First() public pure virtual override returns (string memory) {
          return "B";
       }
    }
@@ -599,8 +599,8 @@ Example- contract B is A {}
    Example-
    ```
    contract D is B, C {
-      function foo() public pure override(B, C) returns (string memory) {
-         return super.foo();
+      function First() public pure override(B, C) returns (string memory) {
+         return super.First();
       }
    }
    ```
@@ -620,8 +620,8 @@ Calling parent contracts can be done directly or using the keyword super.
    Parent contracts can be called directly by their function name.
    Example-
    ```
-   function foo() public override {
-      A.foo();
+   function First() public override {
+      A.First();
    }
    ```
 2. Using 'super':-
@@ -755,7 +755,7 @@ try/catch blocks are used to handle errors that occur during external function c
 1. Handling External Function Call Errors:-
    ```
    function tryCatchExternalCall(uint256 _i) public {
-      try foo.myFunc(_i) returns (string memory result) {
+      try First.myFunc(_i) returns (string memory result) {
          emit Log(result);
       } catch {
          emit Log("external call failed");
@@ -765,8 +765,8 @@ try/catch blocks are used to handle errors that occur during external function c
 2. Handling Contract Creation Errors:-
    ```
    function tryCatchNewContract(address _owner) public {
-      try new Foo(_owner) returns (Foo foo) {
-         emit Log("Foo created");
+      try new First(_owner) returns (First First) {
+         emit Log("First created");
       } catch Error(string memory reason) {
          emit Log(reason);
       } catch (bytes memory reason) {
@@ -774,3 +774,155 @@ try/catch blocks are used to handle errors that occur during external function c
       }
    }
    ```
+
+
+### Import
+The 'import' statements are used to include code from other Solidity files into current file.
+1. Local Imports:-
+   ```
+   // Importing from local file First.sol in the same directory
+   import "./First.sol";
+   // Importing specific symbols from First.sol with aliases
+   import { Unauthorized, add as func, Point } from "./First.sol";
+
+   contract Import {
+      // Initialize First contract from First.sol
+      First public First = new First();
+      // Access functions or structs imported from First.sol
+      function getFirstName() public view returns (string memory) {
+         return First.name();
+      }
+   }
+   ```
+2. External Imports:-
+   ```
+   // Importing from an external file on GitHub
+   import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contracts/utils/cryptography/ECDSA.sol";
+   ```
+
+
+### Library
+A library is a collection of functions that are reusable across multiple contracts. They are often used to group utility functions that can be shared among multiple contracts.
+1. Math library:-
+   ```
+   library Math {
+      function sqrt(uint256 y) internal pure returns (uint256 z) {
+         // Function to calculate square root
+         // Implementation omitted for brevity
+      }
+   }
+   contract MathSolve {
+      function testSquareRoot(uint256 x) public pure returns (uint256) {
+         // Using the Math library function
+         return Math.sqrt(x);
+      }
+   }
+   ```
+2. Array library:-
+   ```
+   library Array {
+      function remove(uint256[] storage arr, uint256 index) public {
+         // Function to remove an element from an array
+         // Implementation omitted for brevity
+      }
+   }
+   contract TestArray {
+      using Array for uint256[];
+      uint256[] public arr;
+      function testArrayRemove() public {
+         // Using the Array library function
+         arr.remove(1);
+         // Additional test cases and assertions omitted for brevity
+      }
+   }
+   ```
+
+
+### ABI Encode and Decode
+ABI (Application Binary Interface) encoding and decoding are mechanisms used to serialize and deserialize data for communication between contracts or between contracts and external applications. ABI encoding is used to convert data into a byte array suitable for transmission, while ABI decoding is used to reverse this process and extract data from a byte array.
+
+1. ABI Encoding:-
+   ABI encoding converts function arguments or data into a byte array format that can be sent or stored efficiently.
+   Example-
+   ```
+   pragma solidity ^0.8.0;
+   contract MyContract {
+      function add(uint256 a, uint256 b) external pure returns (uint256) {
+         return a + b;
+      }
+   }
+   contract CallerContract {
+      function encodeAddFunction(uint256 a, uint256 b) external pure returns (bytes memory) {
+         return abi.encodeWithSignature("add(uint256,uint256)", a, b);
+      }
+   }
+   ```
+2. ABI Decoding:-
+   ABI decoding is used to extract function return values or data from a byte array.
+   Example-
+   ```
+   pragma solidity ^0.8.0;
+   contract MyContract {
+      function add(uint256 a, uint256 b) external pure returns (uint256) {
+         return a + b;
+      }
+   }
+   contract CallerContract {
+      function decodeAddFunction(bytes memory data) external pure returns (uint256) {
+         (bool success, bytes memory result) = address(this).call(data);
+         require(success, "Function call failed");
+         return abi.decode(result, (uint256));
+      }
+   }
+   ``` 
+
+
+### Hashing with Keccak256
+keccak256 is a cryptographic hash function used for generating a fixed-size 256-bit hash value (also known as a message digest) from arbitrary input data. It is commonly used for various purposes such as data integrity verification, creating unique identifiers, and securely storing passwords.
+Working:-
+a. Input Data: The function takes arbitrary input data as its argument, which can be of any length.
+b. Hashing Algorithm: keccak256 uses the Keccak hashing algorithm, which processes the input data in a series of steps to 
+   produce a unique 256-bit hash value.
+c. Output: The output of keccak256 is a hexadecimal string representing the 256-bit hash value.
+Example-
+```
+pragma solidity ^0.8.0;
+contract HashExample {
+   function hashData(string memory _data) public pure returns (bytes32) {
+      // Using keccak256 to hash the input data
+      return keccak256(abi.encodePacked(_data));
+   }
+}
+```
+
+
+### Gas Optimization
+Gas optimization in Solidity refers to techniques used to reduce the amount of gas consumed by smart contracts when executing functions. Gas optimization is essential for reducing transaction costs on the Ethereum network and improving the efficiency of smart contracts.
+Example-
+```
+// Non-optimized version
+function sumIfEvenAndLessThan99(uint[] memory nums) external {
+   for (uint i = 0; i < nums.length; i += 1) {
+      bool isEven = nums[i] % 2 == 0;
+      bool isLessThan99 = nums[i] < 99;
+      if (isEven && isLessThan99) {
+            total += nums[i];
+      }
+   }
+}
+// Gas-optimized version
+function sumIfEvenAndLessThan99(uint256[] calldata nums) external {
+   uint256 _total = total;
+   uint256 len = nums.length;
+   for (uint256 i = 0; i < len;) {
+      uint256 num = nums[i];
+      if (num % 2 == 0 && num < 99) {
+         _total += num;
+      }
+      unchecked {
+         ++i;
+      }
+   }
+   total = _total;
+}
+```
