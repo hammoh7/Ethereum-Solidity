@@ -41,7 +41,9 @@ Terms uesd in above program:-
 1. Boolean (bool):-
    - Represent boolean value, which can be either 'true' or 'false'
    - Example:
+      ```
       bool isReady = true;
+      ```
 
 2. Integer types:-
    - Unsigned intgers (uint) - These are non-negative whole numbers of various sizes. It can be further specified with the 
@@ -58,7 +60,9 @@ Terms uesd in above program:-
    - Represents 20-byte Ethereum address
    - Used to store addresses of contracts or external accounts
    - Example:
+      ```
       address payable recipient = 0x1234567890123456789012345678901234567890;
+      ```
 
 4. Fixed Point Numbers:-
    - Represents fixed-point numbers with decimal places
@@ -166,26 +170,27 @@ Constants are variables whose values cannot be changed after initialization. The
 ### Ether and Wei
 
 Transactions are paid with ether
-1 ether = 10^18 (1e18) wei
+<br> 
+1 ether = 10¹⁸ (1e18) wei
 
 
 ### Gas
 
 Gas:-
-- Gas is a unit of computation used to measure the work done by the Ethereum network in processing transactions and executing 
-  smart contracts.
-- Each operation in a transaction consumes a certain amount of gas, and the total gas used determines the cost of the 
-  transaction.
-- You pay for gas consumed by multiplying the gas used by the gas price (in ether).
-- Transactions with higher gas prices have higher priority for inclusion in a block.
-- Unspent gas is refunded to the sender.
+   - Gas is a unit of computation used to measure the work done by the Ethereum network in processing transactions and     
+     executing smart contracts.
+   - Each operation in a transaction consumes a certain amount of gas, and the total gas used determines the cost of the 
+     transaction.
+   - You pay for gas consumed by multiplying the gas used by the gas price (in ether).
+   - Transactions with higher gas prices have higher priority for inclusion in a block.
+   - Unspent gas is refunded to the sender.
 
 Gas limit:-
-- Gas limit is the maximum amount of gas you're willing to spend for your transaction, set by you.
-- It prevents runaway computations and protects against infinite loops by limiting the resources allocated to a transaction.
-- If a transaction exceeds its gas limit, it fails, and any state changes made are reverted.
-- Block gas limit is the maximum amount of gas allowed in a block, set by the network.
-- It ensures the stability and security of the Ethereum network by limiting the total computational load per block.
+   - Gas limit is the maximum amount of gas you're willing to spend for your transaction, set by you.
+   - It prevents runaway computations and protects against infinite loops by limiting the resources allocated to a transaction.
+   - If a transaction exceeds its gas limit, it fails, and any state changes made are reverted.
+   - Block gas limit is the maximum amount of gas allowed in a block, set by the network.
+   - It ensures the stability and security of the Ethereum network by limiting the total computational load per block.
 
 
 ### Else if statement
@@ -220,16 +225,14 @@ if (condition1) {
 
 ### Mapping
 
-- Mappings are declared using the syntax mapping(keyType => valueType).
+- Mappings are declared using the syntax **mapping(keyType => valueType)**.
 - keyType can be any built-in value type, bytes, string, or any contract.
 - valueType can be any type, including another mapping or an array.
 - Mappings are not iterable, meaning you cannot directly iterate over their keys or values.
-
 - In the provided Solidity contract Mapping, there is a mapping from addresses to unsigned integers 
-  (mapping(address => uint256)).
-
+  **(mapping(address => uint256))**.
 - In the NestedMapping contract, there is a nested mapping from addresses to mappings from unsigned integers to boolean values 
-  (mapping(address => mapping(uint256 => bool))).
+  **(mapping(address => mapping(uint256 => bool)))**.
 
 
 ### Array
@@ -238,18 +241,21 @@ if (condition1) {
 - They can store elements of any data type, including built-in value types, bytes, strings, or even other contracts.
 - Arrays can be declared using the syntax type[], where type represents the data type of the elements.
 - Examples:
-   uint256[] public arr; declares a dynamic array of unsigned integers.
-   uint256[10] public myFixedSizeArr; declares a fixed-size array of unsigned integers with a length of 10.
+   **uint256[] public arr;** *declares a dynamic array of unsigned integers*.
+   <br>
+   **uint256[10] public myFixedSizeArr;** *declares a fixed-size array of unsigned integers with a length of 10*.
 
 - Initialization:
-   uint256[] public arr2 = [1, 2, 3];
+   <br>
+   **uint256[] public arr2 = [1, 2, 3];**
 
 - Accessing arrays:-
    Elements in an array can be accessed and modified using index notation (arr[index]).
 
 - Solidity provides functions to push, pop, and remove elements from arrays:
-   push(uint256 i) adds an element to the end of the array.
-   pop() removes the last element from the array.
+   <br>
+   push(uint256 i) adds an element to the end of the array.<br>
+   pop() removes the last element from the array.<br>
    delete arr[index] removes the element at the specified index and resets its value to the default value.
 
 
@@ -266,12 +272,12 @@ An enum (short for enumeration) is a user-defined data type that consists of a s
       Rejected
    }
    ```
-- Values:-
-   Enumerators in an enum are implicitly assigned integer values starting from 0.
-   You can explicitly assign custom integer values to enumerators if needed.
+- Values:-<br>
+   Enumerators in an enum are implicitly assigned integer values starting from 0.<br>
+   You can explicitly assign custom integer values to enumerators if needed.<br>
    If a custom value is not assigned, the enumerator's value increments by 1 from the previous one.
 - Usage:-
-   Enums are typically used to represent state transitions or categorical options in smart contracts.
+   Enums are typically used to represent state transitions or categorical options in smart contracts.<br>
    Example -
    ```
    contract Document {
@@ -301,10 +307,10 @@ A struct is a user-defined data type that allows you to group together related d
    }
    ```
 - Initialization:-
-   Structs can be initialized in various ways:
-   a. Directly by providing values for each field during declaration.
-   b. Using key-value pairs to specify field values.
-   c. Initializing an empty struct and then updating its fields individually.
+   Structs can be initialized in various ways:<br>
+   a. Directly by providing values for each field during declaration.<br>
+   b. Using key-value pairs to specify field values.<br>
+   c. Initializing an empty struct and then updating its fields individually.<br>
    Example-
    ```
    Person alice = Person("Alice", 30);
@@ -314,7 +320,7 @@ A struct is a user-defined data type that allows you to group together related d
    charlie.age = 35;
    ```
 - Usage:-
-   Structs are used to group together related data fields into a single composite data type. They are commonly used to represent entities or objects with multiple attributes in smart contracts.
+   Structs are used to group together related data fields into a single composite data type. They are commonly used to represent entities or objects with multiple attributes in smart contracts.<br>
    Example-
    ```
    struct Person {
@@ -322,11 +328,11 @@ A struct is a user-defined data type that allows you to group together related d
       uint256 age;
    }
    ```
-- Storage and Memory:-
-   Structs can be stored in storage or memory, depending on where they are used.
-   Structs declared inside functions are stored in memory by default and are temporary.
-   Structs declared at the contract level are stored in storage and persist across function calls.
-   You can explicitly specify the storage location using storage or memory keywords.
+- Storage and Memory:-<br>
+   Structs can be stored in storage or memory, depending on where they are used.<br>
+   Structs declared inside functions are stored in memory by default and are temporary.<br>
+   Structs declared at the contract level are stored in storage and persist across function calls.<br>
+   You can explicitly specify the storage location using storage or memory keywords.<br>
    Example-
       ```
       Person storage person;  // Stored in storage
@@ -336,23 +342,23 @@ A struct is a user-defined data type that allows you to group together related d
 
 ### Storage, Memory and CallData
 
-1. Storage:-
-   Variables declared as storage are state variables stored on the blockchain. They persist across function calls and transactions.
+1. Storage -
+   Variables declared as storage are state variables stored on the blockchain. They persist across function calls and transactions.<br>
    Example-
    ```
    uint256[] public arr;
    mapping(uint256 => address) map;
    ```
-2. Memory:-
-   Variables declared as memory exist only during the execution of a function call. They are temporary and do not persist between function calls.
+2. Memory -
+   Variables declared as memory exist only during the execution of a function call. They are temporary and do not persist between function calls.<br>
    Example-
    ```
    function f() public {
       uint256[] memory myMemArray = new uint256[](10);
    }
    ```
-3. Calldata:-
-   Calldata is a special data location that contains function arguments and external function call data. It is read-only and cannot be modified by the contract.
+3. Calldata -
+   Calldata is a special data location that contains function arguments and external function call data. It is read-only and cannot be modified by the contract.<br>
    Example-
    ```
    function h(uint256[] calldata _arr) external {
