@@ -24,7 +24,7 @@ contract HelloWorld {
     string public greet = "Hello World!";
 }
 ```
-Terms uesd in above program:-
+Terms used in above program:-
 1. SPDX License Identifier - SPDX stands for Software Package Data Exchange, and it's a standard format used to declare 
    licenses associated with software projects. In this case, the license is declared as MIT, indicating that the code is licensed under the terms of the MIT License, which is a permissive open-source license.
 2. Pragma directive - The pragma directive specifies compiler settings and version constraints. In this case, it indicates 
@@ -336,6 +336,8 @@ A struct is a user-defined data type that allows you to group together related d
    Example-
       ```
       Person storage person;  // Stored in storage
+      ```
+      ```
       Person memory person;   // Stored in memory
       ```
 
@@ -372,9 +374,9 @@ A struct is a user-defined data type that allows you to group together related d
 Transient might refer to data that exists temporarily or is not persisted on the blockchain. 
 
 1. Stack:-
-   Solidity does not support dynamic allocation of memory on the stack.
-   Primitive data types and fixed-size arrays declared within functions are stored on the stack.
-   Stack variables are also temporary and are deallocated once the function execution completes.
+   Solidity does not support dynamic allocation of memory on the stack.<br>
+   Primitive data types and fixed-size arrays declared within functions are stored on the stack.<br>
+   Stack variables are also temporary and are deallocated once the function execution completes.<br>
    Example-
    ```
    function exampleFunction() public {
@@ -384,7 +386,7 @@ Transient might refer to data that exists temporarily or is not persisted on the
    }
    ```
 2. Return values:-
-   Return values from functions declared as memory or as the return data type are transient, as they only exist during the function execution and are not stored on the blockchain.
+   Return values from functions declared as memory or as the return data type are transient, as they only exist during the function execution and are not stored on the blockchain.<br>
    Example-
    ```
    function exampleFunction() public returns (uint256) {
@@ -401,7 +403,7 @@ Functions in Solidity are essential components of smart contracts that define th
 
 1. Return values:-
    Functions can return one or more values using the returns keyword followed by the data types of the returned values.
-   Multiple return values can be returned as a tuple. Return values can be named, allowing for more descriptive code.
+   Multiple return values can be returned as a tuple. Return values can be named, allowing for more descriptive code.<br>
    Example-
    ```
    function returnMany() public pure returns (uint256, bool, uint256) {
@@ -409,7 +411,7 @@ Functions in Solidity are essential components of smart contracts that define th
    }
    ```
 2. Named Returns:-
-   Return values can be named, making it clearer what each value represents. Named return values are specified within parentheses after the returns keyword.
+   Return values can be named, making it clearer what each value represents. Named return values are specified within parentheses after the returns keyword.<br>
    Example:-
    ```
    function named() public pure returns (uint256 x, bool b, uint256 y) {
@@ -417,7 +419,7 @@ Functions in Solidity are essential components of smart contracts that define th
    }
    ```
 3. Assigned Returns:-
-   Return values can be assigned to their names within the function body without using the return statement explicitly.
+   Return values can be assigned to their names within the function body without using the return statement explicitly.<br>
    Example-
    ```
    function assigned() public pure returns (uint256 x, bool b, uint256 y) {
@@ -427,8 +429,7 @@ Functions in Solidity are essential components of smart contracts that define th
    }
    ```
 4. Destructuring assignments:-
-   Destructuring assignment allows for unpacking multiple return values from a function call.
-   Values can be assigned to individual variables using a single assignment statement.
+   Destructuring assignment allows for unpacking multiple return values from a function call. Values can be assigned to individual variables using a single assignment statement.<br>
    Example-
    ```
    function destructuringAssignments() public pure returns (uint256, bool, uint256, uint256, uint256) {
@@ -438,23 +439,22 @@ Functions in Solidity are essential components of smart contracts that define th
    }
    ```
 5. Input and Output types:-
-   Public functions in Solidity cannot accept certain data types as inputs or outputs, such as mappings.
-   Arrays can be used as both input and output parameters.
+   Public functions in Solidity cannot accept certain data types as inputs or outputs, such as mappings. Arrays can be used as both input and output parameters.<br>
    Example-
    ```
    function arrayInput(uint256[] memory _arr) public {}
    function arrayOutput() public view returns (uint256[] memory) {}
    ```
 6. Call functions with Key-value inputs:-
-   Functions can be called with key-value inputs, providing a more readable way to pass arguments.
+   Functions can be called with key-value inputs, providing a more readable way to pass arguments.<br>
    Example-
    ```
    function someFuncWithManyInputs(uint256 x, uint256 y, uint256 z, address a, bool b, string memory c) public pure returns (uint256) {}
    function callFuncWithKeyValue() external pure returns (uint256) {}
    ```
 7. View functions:-
-   View functions are declared using the view keyword. View functions can read the state but cannot change it.
-   They promise not to modify the state of the contract. They are typically used to retrieve and examine data from the contract without altering its state.
+   View functions are declared using the view keyword. View functions can read the state but cannot change it.<br>
+   They promise not to modify the state of the contract. They are typically used to retrieve and examine data from the contract without altering its state.<br>
    Example-
    ```
    function addToX(uint256 y) public view returns (uint256) {
@@ -462,8 +462,7 @@ Functions in Solidity are essential components of smart contracts that define th
    }
    ```
 8. Pure functions:-
-   Pure functions are declared using the pure keyword. Pure functions are entirely deterministic and operate solely on their input parameters.
-   They promise not to modify or read from the state of the contract. They cannot access or modify state variables or call other functions that modify state.
+   Pure functions are declared using the pure keyword. Pure functions are entirely deterministic and operate solely on their input parameters. They promise not to modify or read from the state of the contract. They cannot access or modify state variables or call other functions that modify state.<br>
    Example-
    ```
    function add(uint256 i, uint256 j) public pure returns (uint256) {
@@ -471,9 +470,9 @@ Functions in Solidity are essential components of smart contracts that define th
    }
    ```
 
-Function Modifier:-
-Function modifiers are pieces of code that can be executed before and/or after a function call. They are used to modify the behavior of functions by adding additional checks or operations. 
-Modifiers are declared using the modifier keyword followed by a name. Modifiers can contain arbitrary code and typically include conditions or operations to be performed before or after the function execution. Modifiers can be applied to multiple functions within a contract.
+**Function Modifier**:-<br>
+Function modifiers are pieces of code that can be executed before and/or after a function call. They are used to modify the behavior of functions by adding additional checks or operations.<br>
+Modifiers are declared using the modifier keyword followed by a name. Modifiers can contain arbitrary code and typically include conditions or operations to be performed before or after the function execution. Modifiers can be applied to multiple functions within a contract.<br>
 Example-
 ```
 modifier onlyOwner() {
@@ -482,7 +481,7 @@ modifier onlyOwner() {
 }
 ```
 1. Usage:-
-   Modifiers are used to enforce access control, validate inputs, guard against reentrancy, or perform any custom checks. They are applied to functions using the modifier keyword followed by the modifier name. Multiple modifiers can be applied to a single function by separating them with spaces.
+   Modifiers are used to enforce access control, validate inputs, guard against reentrancy, or perform any custom checks. They are applied to functions using the modifier keyword followed by the modifier name. Multiple modifiers can be applied to a single function by separating them with spaces.<br>
    Example- 
    ```
    function changeOwner(address _newOwner) public onlyOwner validAddress(_newOwner) {
@@ -490,7 +489,7 @@ modifier onlyOwner() {
    }
    ```
 2. Paramters:-
-   Modifiers can take parameters, allowing for dynamic behavior based on input values. Parameters are specified within parentheses after the modifier name
+   Modifiers can take parameters, allowing for dynamic behavior based on input values. Parameters are specified within parentheses after the modifier name.<br>
    Example-
    ```
    modifier validAddress(address _addr) {
@@ -499,7 +498,7 @@ modifier onlyOwner() {
    }
    ```
 3. Execution:-
-   Modifiers can be executed before and/or after the function body. The underscore (_) symbol is used inside a modifier to indicate where the function body should be executed.
+   Modifiers can be executed before and/or after the function body. The underscore (_) symbol is used inside a modifier to indicate where the function body should be executed.<br>
    Example-
    ```
    modifier noReentrancy() {
@@ -512,15 +511,15 @@ modifier onlyOwner() {
 
 
 ### Events
-Events are mechanism for logging and emitting data to the Ethereum blockchain. They serve various purposes, including updating user interfaces, providing a cheap form of storage, and enabling off-chain applications to react to on-chain events.
-Events are declared using the event keyword followed by the event name. They can have zero or more parameters, each with its own data type.
+Events are mechanism for logging and emitting data to the Ethereum blockchain. They serve various purposes, including updating user interfaces, providing a cheap form of storage, and enabling off-chain applications to react to on-chain events.<br>
+Events are declared using the event keyword followed by the event name. They can have zero or more parameters, each with its own data type.<br>
 Example-
 ```
 event Log(address indexed sender, string message);
 event AnotherLog();
 ```
 1. Event Emission:-
-   Events are emitted using the emit keyword followed by the event name and any required parameters.
+   Events are emitted using the emit keyword followed by the event name and any required parameters.<br>
    Example-
    ```
    function test() public {
@@ -531,12 +530,18 @@ event AnotherLog();
    ```
 2. Indexed parameters:-
    Indexed parameters are marked with the indexed keyword, allowing for efficient filtering of logs based on those parameters.
-   Indexed parameters are useful when filtering logs using the indexed keyword in event listeners or when querying logs using tools like web3.js.
-   Example- event Log(address indexed sender, string message);
+   Indexed parameters are useful when filtering logs using the indexed keyword in event listeners or when querying logs using tools like web3.js.<br>
+   Example- 
+   ```
+   event Log(address indexed sender, string message);
+   ```
 3. Usage:-
-   Events are commonly used to provide a historical record of important contract interactions.
-   Off-chain applications can listen for these events and react accordingly, updating user interfaces or triggering further actions. Events are a cost-effective way to store information on the blockchain, as they are significantly cheaper than storage operations.
-   Example- emit Log(msg.sender, "Hello World!");
+   Events are commonly used to provide a historical record of important contract interactions.<br>
+   Off-chain applications can listen for these events and react accordingly, updating user interfaces or triggering further actions. Events are a cost-effective way to store information on the blockchain, as they are significantly cheaper than storage operations.<br>
+   Example- 
+   ```
+   emit Log(msg.sender, "Hello World!");
+   ```
 
 
 ### Constructor
