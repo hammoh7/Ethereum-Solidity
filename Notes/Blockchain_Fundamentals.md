@@ -23,6 +23,7 @@ Example -
 -	Imagine Alice has 10 tokens. This is initial state of her account.
 -	Alice tries to send 10 tokens to Bob and at same time tries to send the same 10 tokens to Charlie.
 -	The state transition function needs to ensure that Alice cannot spend more tokens than she has.
+<br>
 Prevention – By processing the transactions in sequence and updating the state accordingly, the blockchain prevents Alice from spending the same 10 tokens twice.
 <br>
 
