@@ -60,10 +60,9 @@ Prevention – By processing the transactions in sequence and updating the state
     easily transferred, divided, and managed on the blockchain.
 - 	Privacy - Users are represented by cryptographic addresses rather than personal information, providing a degree of privacy.
 
-```
-Key points:-<br>
-Mining - Mining in blockchain technology is the process through which new blocks are added to the blockchain. It involves solving complex mathematical puzzles to validate and secure transactions.<br>
-Working of Mining –
+**Key points:-**<br>
+*Mining - Mining in blockchain technology is the process through which new blocks are added to the blockchain. It involves* *solving complex mathematical puzzles to validate and secure transactions.*<br>
+*Working of Mining –*
 - 	Collecting transactions – Miners gather unconfirmed transactions from the network and organize them into a block.
 - 	Hashing – Miners repeatedly run the block’s data through a cryptographic hash function. They change a small part of the 
     block’s data (called a nonce) each time until they find a hash that meets a certain condition. The process of finding valid hash is known as Proof of Work (PoW). Once a miner finds a valid hash, they broadcast the new block to the network.
@@ -71,19 +70,19 @@ Working of Mining –
     the block is added to the blockchain, and the miner receives their reward.
 - 	New Block – The new block is linked to the previous block, forming a chain of blocks.
 
-Nonce - A nonce (short for "number only used once") is a random or semi-random number that is used only once in cryptographic communication.<br>
-In blockchain, a nonce is a number that miners adjust during the mining process to find a valid hash for a block.
+*Nonce - A nonce (short for "number only used once") is a random or semi-random number that is used only once in* *cryptographic communication.*<br>
+*In blockchain, a nonce is a number that miners adjust during the mining process to find a valid hash for a block.*
 <br>
 
-How do miners know about the targeted hash they want to achieve. What are the criteria on which miner know that the block they have hashed is correct?
+*How do miners know about the targeted hash they want to achieve. What are the criteria on which miner know that the block* *they have hashed is correct?*
 -	Target hash - The target hash is a specific value that the hash of a new block must be less than or equal to for the block 
     to be considered valid. This target is set by the blockchain protocol and adjusts periodically.
 -	Difficulty - The difficulty is a measure of how hard it is to find a hash. Higher the difficulty, smaller the target hash 
     value, making it harder to find valid hash
-```
 
 
-### Cryptography: -
+
+### Cryptography
 Cryptography is the science of securing information by transforming it into a form that is unintelligible to anyone who does not possess the means to decipher it. It involves techniques such as encryption, decryption, hashing, and digital signatures to protect data from unauthorized access, ensure data integrity, and authenticate the identity of users and transactions.
 - 	Securing transactions – Public-Key Cryptography (Asymmetric Encryption)
     -	Public and Private key – Each participant has public-private key pair. The public key shared openly, while private key 
@@ -114,9 +113,9 @@ Cryptography is the science of securing information by transforming it into a fo
 
 *Example - https://andersbrownworth.com/blockchain/*
 
-**Hash Collision**
+**Hash Collision**<br>
 A hash collision occurs when two distinct inputs produce the same hash output. Despite the vast number of possible hash values (e.g., 2256 for SHA-256), the finite size of the hash output means that collisions must exist (a principle known as the pigeonhole principle).
--   Collision Attacks – Birthday paradox:
+-   Collision Attacks – Birthday paradox:<br>
     This paradox shows that the likelihood of a collision is higher than intuitively expected. For SHA-256, finding a collision via brute force would still require an infeasible amount of computational power, approximately 2128 operations.
 
 -   Prevention –
@@ -138,7 +137,7 @@ Blockchain technology can be both decentralized and distributed.
     ensuring that the network operates without centralized oversight.
 
 
-### Game Theory: -
+### Game Theory
 Game theory is a mathematical framework used to analyze strategic interactions between individuals or entities, where the outcome for each participant depends on the actions of all. In blockchain technology, game theory plays a crucial role in designing mechanisms that incentivize participants to act in ways that maintain the network's security, integrity, and decentralization.<br>
 Key concepts in Game Theory –
 - 	Players - In blockchain, players include miners, validators, and users.
@@ -147,37 +146,36 @@ Key concepts in Game Theory –
 - 	Payoffs - In blockchain, payoffs often involve transaction fees, block rewards, or penalties for malicious behavior.
 - 	Equilibrium - A state where no player can improve their payoff by unilaterally changing their strategy. The most common 
     type is the Nash Equilibrium.
-<br>
-Game Theory problems –
 
-- 	The Byzantine Generals Problem: 
+Game Theory problems –
+- 	The Byzantine Generals Problem:<br> 
     Imagine several generals of a Byzantine army camped around a city, who need to agree on a common battle plan to win. They are communicating through messages, which can be altered. Some generals may be traitors who want to destroy the plan.
     -   Problem - How can the loyal generals reach a consensus (agreement) despite the presence of traitors who might send    
         conflicting information?
         This problem is analogous to nodes in a blockchain network reaching consensus on the state of the blockchain, despite the potential presence of malicious nodes.
     -   Solution - Blockchain uses consensus algorithms like Proof of Work (PoW) or Proof of Stake (PoS) to solve this 
         problem, ensuring that the network can agree on a single version of the truth even if some nodes are acting maliciously.
-- 	51% Attack:
+- 	51% Attack:<br>
     In a blockchain network, if an entity controls more than 50% of the network’s mining or validation power, it can potentially manipulate the blockchain.
     -   Problem - The attacker could double-spend coins or prevent other transactions from being confirmed.
     -   Solution - PoW and PoS make it economically and computationally challenging to gain control of 51% of the network, 
         thus deterring such attacks.
-- 	Staking and Slashing:
+- 	Staking and Slashing:<br>
     Validators in a PoS system stake their tokens as collateral to validate blocks. If they act dishonestly, they lose part of their stake (slashing).
     -   Problem - Ensuring validators act in the best interest of the network.
     -   Solution - Staking and slashing ensure that validators are financially motivated to act correctly, maintaining the  
         security and integrity of the blockchain.
-- 	Sybil attack:
+- 	Sybil attack:<br>
     An attacker creates many fake identities to gain disproportionate influence in a network.
     -   Problem - This can distort decision-making processes and lead to centralization of control.
     -   Solution - Proof of Work (PoW) and Proof of Stake (PoS) inherently limit the influence of fake identities because 
         acquiring the necessary computational power (in PoW) or stake (in PoS) for a significant attack is prohibitively expensive.
-- 	Tragedy of Commons:
+- 	Tragedy of Commons:<br>
     In a shared-resource system, individuals acting in their own interest can deplete the resource, leading to collective harm.
     -   Problem - How to prevent overuse and ensure sustainable management of the resource.
     -   Solution - Transaction fees and gas limits (as in Ethereum) help regulate resource use, incentivizing users to use the 
         network efficiently and preventing spam.
-- 	Prisoner’s Dilemma:
+- 	Prisoner’s Dilemma:<br>
     Two prisoners are offered a deal: if one betrays the other, the betrayer goes free while the other gets a long sentence. If both betray, both get moderate sentences. If neither betrays, both get short sentences.
     -   Problem - The dilemma arises because each prisoner’s best strategy depends on the other's action, often leading to a 
         suboptimal outcome for both.
@@ -187,7 +185,7 @@ Game Theory problems –
 **Key points:-**<br>
 *How is the nonce calculated to get perfect hash for the block?*
 Finding nonce in blockchain mining is a hit-and-trial process, and it relies heavily on computational power.<br>
-Computational power –
+Working –
 - 	Initial setup - A miner starts with a block of transactions, a timestamp, the previous block’s hash, and an initial nonce 
     value (often starting at 0).
 - 	Hash calculation - The miner inputs the block header (which includes the current nonce) into the hash function to 
@@ -200,7 +198,7 @@ Computational power –
     This process is repeated, often millions or billions of times, until a valid nonce is found.
 
 
-### What is Web3: -
+### What is Web3
 Web3 represents the next evolution of the internet, characterized by decentralized protocols and technologies, often involving blockchain and cryptocurrencies.
 <br>
 Web1 (Static web):
@@ -230,14 +228,15 @@ Web3 (Decentralized web):
 -	Examples – Ethereum, Solana, Uniswap (DeFi), NFTs, DApps, Ether (ETH)
 
 
-### Smart Contracts: -
-Smart contracts are computer programs that automatically execute predefined actions when certain conditions are met. They are immutable and distributed, running exactly as programmed without any possibility of downtime, fraud, or third-party interference.
+### Smart Contracts
+Smart contracts are computer programs that automatically execute predefined actions when certain conditions are met. They are immutable and distributed, running exactly as programmed without any possibility of downtime, fraud, or third-party interference.<br>
 Benefits –
 - 	Trustless transactions - Smart contracts remove the need for intermediaries, reducing the trust required between parties.
 - 	Transparency – All transactions and contract terms are recorded on the blockchain, providing transparency and auditability.
 - 	Efficiency – Automated execution reduces the time and cost associated with traditional contract enforcement and 
     administrative processes.
 - 	Security – Smart contracts are stored on blockchain, making them resistant to tampering and fraud.
+
 Common use cases –
 - 	Financial services – Automated payments, insurance claims and loan agreements.
 - 	Supply chain management – Tracking goods, verifying authenticity, and automating payments on delivery.
@@ -245,7 +244,7 @@ Common use cases –
 - 	Voting system – Secure, transparent and tamper-proof voting mechanisms.
 - 	Digital identity – Managing and verifying identities in decentralized manner.
 
-Limitations of Smart contracts: -
+Limitations of Smart contracts -
 - 	Immutability and Bugs –
     -	Once deployed, Cannot be changed - Smart contracts are immutable once deployed on the blockchain. If there is a bug in 
         the code, it cannot be easily fixed. This can lead to significant issues, as seen in high-profile incidents like the DAO hack.
