@@ -16,14 +16,13 @@ Working –
 - 	State transition function – This is a set of rules that blockchain follows to update its state. When a new transaction is 
     processed, the state transition function determines how state changes.
 - 	New state – After processing a transaction, the blockchain moves to new state, reflecting the changes made by transactions.
-<br>
-Problem of Double spending –
+
+Problem of Double spending –<br>
 Double spending is the problem where the same digital asset (like a cryptocurrency) is spent more than once. This is a significant issue in digital currencies because digital information can be easily copied.<br>
-Example:
+Example -
 -	Imagine Alice has 10 tokens. This is initial state of her account.
 -	Alice tries to send 10 tokens to Bob and at same time tries to send the same 10 tokens to Charlie.
 -	The state transition function needs to ensure that Alice cannot spend more tokens than she has.
-<br>
 Prevention – By processing the transactions in sequence and updating the state accordingly, the blockchain prevents Alice from spending the same 10 tokens twice.
 <br>
 
