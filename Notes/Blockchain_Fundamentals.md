@@ -23,8 +23,8 @@ Example -
 -	Imagine Alice has 10 tokens. This is initial state of her account.
 -	Alice tries to send 10 tokens to Bob and at same time tries to send the same 10 tokens to Charlie.
 -	The state transition function needs to ensure that Alice cannot spend more tokens than she has.
-Prevention – By processing the transactions in sequence and updating the state accordingly, the blockchain prevents Alice from spending the same 10 tokens twice.
 <br>
+Prevention – By processing the transactions in sequence and updating the state accordingly, the blockchain prevents Alice from spending the same 10 tokens twice.
 
 **Key points:-**<br>
 *Why is Block size limited in Blockchain?*<br>
@@ -34,13 +34,12 @@ Prevention – By processing the transactions in sequence and updating the state
 - 	Larger blocks can take long to validate, which can slow down the network.
 - 	By limiting block size, the blockchain can prevent malicious actors from flooding the network with large numbers of 
     transactions.
-<br>
 
 *Block size limit?*
 - 	For Bitcoin – 1-2 MB
 - 	Ethereum – In Ethereum, instead of fixed block size, we use gas limit for each block. The gas limit is dynamic and can be 
     adjusted by network. As of now, the gas limit is around 15 million gas per block.
-<br>
+
 
 ### Characteristics of Blockchain technology: -
 - 	Decentralization - Blockchain operates on a peer-to-peer network where no single entity has control over the entire 
@@ -61,9 +60,10 @@ Prevention – By processing the transactions in sequence and updating the state
     easily transferred, divided, and managed on the blockchain.
 - 	Privacy - Users are represented by cryptographic addresses rather than personal information, providing a degree of privacy.
 
-**Key points:-**<br>
-*Mining - Mining in blockchain technology is the process through which new blocks are added to the blockchain. It involves* *solving complex mathematical puzzles to validate and secure transactions.*<br>
-*Working of Mining –*
+```
+Key points:-<br>
+Mining - Mining in blockchain technology is the process through which new blocks are added to the blockchain. It involves solving complex mathematical puzzles to validate and secure transactions.<br>
+Working of Mining –
 - 	Collecting transactions – Miners gather unconfirmed transactions from the network and organize them into a block.
 - 	Hashing – Miners repeatedly run the block’s data through a cryptographic hash function. They change a small part of the 
     block’s data (called a nonce) each time until they find a hash that meets a certain condition. The process of finding valid hash is known as Proof of Work (PoW). Once a miner finds a valid hash, they broadcast the new block to the network.
@@ -71,15 +71,16 @@ Prevention – By processing the transactions in sequence and updating the state
     the block is added to the blockchain, and the miner receives their reward.
 - 	New Block – The new block is linked to the previous block, forming a chain of blocks.
 
-*Nonce - A nonce (short for "number only used once") is a random or semi-random number that is used only once in* *cryptographic communication.*<br>
-*In blockchain, a nonce is a number that miners adjust during the mining process to find a valid hash for a block.*
+Nonce - A nonce (short for "number only used once") is a random or semi-random number that is used only once in cryptographic communication.<br>
+In blockchain, a nonce is a number that miners adjust during the mining process to find a valid hash for a block.
 <br>
 
-*How do miners know about the targeted hash they want to achieve. What are the criteria on which miner know that the block* *they have hashed is correct?*
+How do miners know about the targeted hash they want to achieve. What are the criteria on which miner know that the block they have hashed is correct?
 -	Target hash - The target hash is a specific value that the hash of a new block must be less than or equal to for the block 
     to be considered valid. This target is set by the blockchain protocol and adjusts periodically.
 -	Difficulty - The difficulty is a measure of how hard it is to find a hash. Higher the difficulty, smaller the target hash 
     value, making it harder to find valid hash
+```
 
 
 ### Cryptography: -
