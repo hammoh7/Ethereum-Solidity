@@ -24,7 +24,7 @@ Example -
 -	Alice tries to send 10 tokens to Bob and at same time tries to send the same 10 tokens to Charlie.
 -	The state transition function needs to ensure that Alice cannot spend more tokens than she has.
 <br>
-Prevention – By processing the transactions in sequence and updating the state accordingly, the blockchain prevents Alice from spending the same 10 tokens twice.
+Prevention – By processing the transactions in sequence and updating the state accordingly, the blockchain prevents Alice from spending the same 10 tokens twice.<br>
 
 **Key points:-**<br>
 *Why is Block size limited in Blockchain?*<br>
@@ -81,7 +81,6 @@ Prevention – By processing the transactions in sequence and updating the state
     value, making it harder to find valid hash
 
 
-
 ### Cryptography
 Cryptography is the science of securing information by transforming it into a form that is unintelligible to anyone who does not possess the means to decipher it. It involves techniques such as encryption, decryption, hashing, and digital signatures to protect data from unauthorized access, ensure data integrity, and authenticate the identity of users and transactions.
 - 	Securing transactions – Public-Key Cryptography (Asymmetric Encryption)
@@ -122,7 +121,6 @@ A hash collision occurs when two distinct inputs produce the same hash output. D
     -	Strong hash function - Use hash functions with larger output sizes (like SHA-256, SHA-3) to reduce the probability of 
         collisions.
     -	Cryptographic best practices – Stay updated with latest research
-
 
 **Key points:-**<br>
 Blockchain technology can be both decentralized and distributed. 
