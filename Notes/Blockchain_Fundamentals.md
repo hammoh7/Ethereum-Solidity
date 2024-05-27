@@ -2,13 +2,13 @@
 
 ## What is Blockchain?
 A blockchain is a distributed ledger that maintains a continuously growing list of ordered records, called “blocks”, that are linked together and secured using cryptography.
-•	Blocks - Blocks are data containers where data is permanently recorded on blockchain. A block records Transactions,     
+- 	Blocks - Blocks are data containers where data is permanently recorded on blockchain. A block records Transactions,     
     Timestamps, Hash of previous block and Nonce.
-•	Hash – Blockchain hash is digitized fingerprint of document or set of data. It ensures that the blocks content remain 
+- 	Hash – Blockchain hash is digitized fingerprint of document or set of data. It ensures that the blocks content remain 
     unaltered.
-•	Characteristics – Decentralization, Immutability and Transparency
-•	Consensus mechanism – Proof of Work and Proof of Stake
-•	Cryptography – Cryptographic hash functions, public-key cryptography and Digital signatures
+- 	Characteristics – Decentralization, Immutability and Transparency
+- 	Consensus mechanism – Proof of Work and Proof of Stake
+- 	Cryptography – Cryptographic hash functions, public-key cryptography and Digital signatures
 
 ### State Machines
 A state machine is a behavior model that consists of finite number of states and therefore called as Finite State Machine (FSM). Based on current state and the given input, the machine performs state transitions and produces outputs.<br>
